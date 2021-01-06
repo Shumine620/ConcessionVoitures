@@ -60,11 +60,11 @@ public class MainVoiture {
             System.out.println("    ");
 
             // Voiture la plus chere
-        double prixMax = 0;
+        Voiture prixMax = voitureList.get(0);
         String result = null;
             for (int i = 0; i < voitureList.size( ); i++) {
-                if (voitureList.get(i).getPrixDeVente() > prixMax) {
-                    prixMax = voitureList.get(i).getPrixDeVente(); }
+                if (voitureList.get(i).getPrixDeVente() > prixMax.getPrixDeVente()) {
+                    prixMax = voitureList.get(i); }
                             }
         System.out.println("Voiture la plus chère : " + prixMax);
 
@@ -74,27 +74,28 @@ public class MainVoiture {
 
 
         //Voiture la moins chère
-
+Voiture prixMin= voitureList.get(0);
         for (int i = 0; i < voitureList.size( ); i++) {
-            if (voitureList.get(i).getPrixDeVente() > prixMin) {
-                prixMax = voitureList.get(i).getPrixDeVente();
-
-                System.out.println("Voiture la moins chère : " + prixMin);
+            if (voitureList.get(i).getPrixDeVente() > prixMin.getPrixDeVente()) {
+                prixMax = voitureList.get(i);
             }
 
-         Date today = new Date ();
-        int year = Calendar.getInstance().get(Calendar.YEAR);
-
-        for (int i =0; i< voitureList.size(); i++){
-            if (year -5 <= voitureList.get(i).getAnnee()){
-
-                System.out.println( "Liste des voitutres de moins de 5 ans : "+ voitureList.get(i).getAnnee());
-            }
         }
+
+            System.out.println("Voiture la moins chère : " + prixMin);
         System.out.println("    ");
 
+    Date today = new Date ();
+    int year = Calendar.getInstance().get(Calendar.YEAR);
+
+        for (int i =0; i< voitureList.size(); i++){
+        if (year -5 <= voitureList.get(i).getAnnee()){
+
+            System.out.println( "Liste des voitutres de moins de 5 ans : "+ voitureList.get(i).getAnnee());
     }
-}}
+}
+    }
+}
 
 
 
